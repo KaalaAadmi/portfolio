@@ -7,11 +7,11 @@ import { setOS } from "./redux/actions";
 
 const App = () => {
 	const os = useSelector((state) => state.os);
-  const dispatch = useDispatch();
+	const dispatch = useDispatch();
 
 	const handleModeChange = (newMode) => {
-    dispatch(setOS(newMode));
-  };
+		dispatch(setOS(newMode));
+	};
 
 	function getOS() {
 		let userAgent = window.navigator.userAgent.toLowerCase(),
@@ -35,16 +35,16 @@ const App = () => {
 	useEffect(() => {
 		getOS();
 	}, []);
-	console.log(os)
+	console.log(os);
 	return (
-    <>
-      {os === "macos" || os === "ios" ? (
-        <Apple changeOS={handleModeChange} />
-      ) : (
-        <Windows changeOS={handleModeChange} />
-      )}
-    </>
-  );
+		<>
+			{os === "windows" || os === "android" ? (
+				<Windows changeOS={handleModeChange} />
+			) : (
+				<Apple changeOS={handleModeChange} />
+			)}
+		</>
+	);
 };
 
 export default App;
