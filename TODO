@@ -1,0 +1,9 @@
+MacOS:
+- MODALS:
+  - About Me
+  - Contact Me
+  - Projects
+
+OVERALL:
+- use redux to change the modes from windows to mac and vice versa
+- fullscreen mode enable

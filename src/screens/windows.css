@@ -1,0 +1,170 @@
+.background {
+	background-image: url("../assets/background.jpg");
+	height: 100vh;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	overflow: hidden;
+}
+.container {
+	height: 100vh;
+	overflow: hidden;
+}
+.menubar {
+	background: rgba(0, 0, 0, 0.5);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	/* border-radius: 10px; */
+	/* border: 1px solid rgba(255, 255, 255, 0.18); */
+	height: 55px;
+	width: 100vw;
+	bottom: 0;
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: row;
+}
+
+.left_side {
+	display: flex;
+	flex-direction: row;
+}
+.rain_symbol {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-right: 5px;
+	padding-left: 15px;
+}
+.description,
+.temperature {
+	font-size: 12px;
+	color: white;
+}
+.center {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 20%;
+}
+.menu_icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* width: 20%; */
+	cursor: pointer;
+}
+.right_side {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100px;
+	padding-right: 20px;
+}
+.lang {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 14px;
+	font-weight: 400;
+}
+.time,
+.date {
+	font-size: 12px;
+	color: white;
+	text-align: right;
+}
+
+.backdrop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: #00000060;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal {
+	/* width: clamp(75%, 700px, 80%);
+	height: min(85%, 85%); */
+	/* background-color: #333; */
+	margin: auto;
+	/* padding: 0 2rem; */
+	border-radius: 12px;
+
+	position: absolute;
+	bottom: 65px;
+	overflow-x: hidden;
+}
+
+.projects_menu {
+	background-color: #303030;
+	width: clamp(70%, 800px, 80%);
+	height: min(80%, 85%);
+	/* overflow-x: hidden;
+	overflow-y: auto; */
+	text-align: center;
+	overflow:auto;
+	overflow-x:hidden;
+	scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.projects_menu::-webkit-scrollbar {
+	/* width: 12px; */
+	display:none;
+}
+
+.projects_menu::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+	border-radius: 10px;
+}
+
+.projects_menu::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+​
+.start_menu {
+	/* width: clamp(25%, 400px, 65%);
+	height: min(25%, 50%); */
+	background-color: rgba(0, 0, 0, 0.25);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	/* padding:10px; */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+.taskBar {
+	background: rgba(0, 0, 0, 0.25);
+	height: 7%;
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+}
+.taskbar_icon {
+	height: inherit;
+	display: flex;
+	align-items: center;
+	width: 30px;
+	position: absolute;
+	
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
+	border-top-right-radius: 12px;
+	/* border-top-left-radius: 12px; */
+	padding-left: 0.8rem;
+}
+.taskbar_icon:hover {
+	background-color: rgb(209, 71, 71);
+}
