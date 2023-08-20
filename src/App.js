@@ -38,7 +38,7 @@ const App = () => {
 	console.log(os)
 	return (
     <>
-      {os === "ios" || os === "macos" ? (
+      {os === "macos" || os === "ios" ? (
         <Apple changeOS={handleModeChange} />
       ) : (
         <Windows changeOS={handleModeChange} />
