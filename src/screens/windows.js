@@ -16,6 +16,7 @@ import linkedin from "../assets/linkedin.png";
 import pdf from "../assets/pdf.png";
 import resume from "../assets/Arnav+Bhattacharya+Resume.pdf";
 import DesktopIcons from "../components/windows/desktopIcons";
+import macosMode from "../assets/macos_mode.png";
 // import MenubarIcons from "../components/windows/menubarIcons";
 import Modal from "../components/windows/Modal";
 import StartMenu from "../components/windows/StartMenu";
@@ -67,10 +68,9 @@ export default function Windows({ toggleMode }) {
 		},
 		{
 			cn: "change_os",
-			src: edge,
+			src: macosMode,
 			shortcut: false,
-			title: "Change OS",
-			// onclick: () => changeOS(os === "macos" ? "windows" : "macos"),
+			title: "macOS\nmode",
 			onclick: toggleMode,
 		},
 	];

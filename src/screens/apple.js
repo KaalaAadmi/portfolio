@@ -11,6 +11,7 @@ import linkedin from "../assets/linkedin_apple.png";
 import safari from "../assets/safari_apple.png";
 import email from "../assets/mail_apple.png";
 import contact from "../assets/contacts_apple.png";
+import windowsMode from "../assets/windows_mode.png"; 
 import DesktopIcons from "../components/mac/desktopIcons";
 import { Tooltip } from "react-tooltip";
 import { motion } from "framer-motion";
@@ -100,9 +101,9 @@ const Apple = ({ toggleMode }) => {
 		},
 		{
 			cn: "change_os",
-			src: safari,
+			src: windowsMode,
 			shortcut: false,
-			title: "Change OS",
+			title: "Windows\nmode",
 			onclick: toggleMode,
 		},
 	];
