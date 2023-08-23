@@ -95,7 +95,7 @@ const About = ({ handleClose,project,contact }) => {
 					>
 						<img
 							src={require("../../assets/image.png")}
-							alt="my photo"
+							alt="my face"
 							style={{
 								height: "6.5rem",
 								width: "6.5rem",

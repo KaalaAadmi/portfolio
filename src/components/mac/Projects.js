@@ -5,10 +5,8 @@ import Backdrop from "./Backdrop";
 import React from "react";
 import ProjectContainer from "./ProjectContainer";
 
-import { AiOutlineClose } from "react-icons/ai";
 import pdf from "../../assets/react.jpg";
 import background from "../../assets/background.jpg";
-import { IoIosArrowBack } from "react-icons/io";
 import ProjectDetails from "./ProjectDetails";
 import { MdClose } from "react-icons/md";
 

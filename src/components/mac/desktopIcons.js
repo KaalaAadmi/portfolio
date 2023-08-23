@@ -105,7 +105,7 @@ const DesktopIcons = ({
 						</div>
 					)}
 				</div>
-				<div>{title}</div>
+				<div className="desktopIcon__title">{title}</div>
 			</div>
 		);
 	}

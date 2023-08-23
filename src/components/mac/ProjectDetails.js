@@ -1,7 +1,7 @@
 import React from "react";
 import StartDivider from "./Divider";
 import { PiUserSquareFill } from "react-icons/pi";
-import { MdClose, MdOutlineSportsBaseball } from "react-icons/md";
+import { MdOutlineSportsBaseball } from "react-icons/md";
 import { GoBrowser } from "react-icons/go";
 
 const ProjectDetails = ({ data,handleClose }) => {

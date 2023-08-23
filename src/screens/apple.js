@@ -265,6 +265,7 @@ const Apple = ({ toggleMode }) => {
 								<a
 									href="https://calendly.com/arnav-bhattacharya"
 									target="_blank"
+									rel="noreferrer"
 									style={{
 										height: "60%",
 										textDecoration: "none",

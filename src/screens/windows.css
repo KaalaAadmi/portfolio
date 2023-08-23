@@ -168,3 +168,8 @@
 .taskbar_icon:hover {
 	background-color: rgb(209, 71, 71);
 }
+
+.desktopIcon__title{
+	white-space: pre-wrap;
+	text-align: center;
+}

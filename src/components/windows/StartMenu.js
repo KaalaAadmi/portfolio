@@ -16,7 +16,6 @@ import { MdOutlineCall, MdOutlineEmail } from "react-icons/md";
 import { FaRegCompass } from "react-icons/fa";
 import StartDivider from "./Divider";
 
-
 const StartMenu = ({
 	handleClose,
 	text,
@@ -90,13 +89,8 @@ const StartMenu = ({
 		setShowStart(false);
 	};
 	const [showDetails, setShowDetails] = React.useState(false);
-	const [hover, setHover] = React.useState({call:false,email:false,website:false});
-  const handleMouseOver=(value)=>{
-    setHover({...hover,[value]:true})
-  }
-  const handleMouseOut=(value)=>{
-    setHover({...hover,[value]:false})
-  }
+	// const [hover, setHover] = React.useState({call:false,email:false,website:false});
+
 	return (
 		<Backdrop onClick={handleClose}>
 			<motion.div
@@ -106,7 +100,7 @@ const StartMenu = ({
 				initial="hidden"
 				animate="visible"
 				exit="exit"
-				style={{ backgroundColor:'rgba(0, 0, 0, 0.25)' }}
+				style={{ backgroundColor: "rgba(0, 0, 0, 0.25)" }}
 			>
 				<div
 					style={{
@@ -159,13 +153,11 @@ const StartMenu = ({
 						</div>
 						<div style={{ width: "60%" }}>
 							{/* <div style={{ display: "flex", justifyContent: "space-evenly" }} > */}
-								<div>+353 83 123 0609</div>
-								{hover.call && (
-									<MdOutlineCall
-										size={18}
-										style={{ color: "blue", cursor: "pointer" }}
-									/>
-								)}
+							<div>+353 83 123 0609</div>
+							<MdOutlineCall
+								size={18}
+								style={{ color: "blue", cursor: "pointer" }}
+							/>
 							{/* </div> */}
 							<StartDivider />
 							<div>bhattaar@tcd.ie</div>
@@ -196,8 +188,8 @@ const StartMenu = ({
 						// width: "100%",
 						// height: "100%",
 						padding: "10px",
-						left:'0',
-						right:'0',
+						left: "0",
+						right: "0",
 						borderBottomLeftRadius: "12px",
 						borderBottomRightRadius: "12px",
 						alignContent: "center",
@@ -206,7 +198,9 @@ const StartMenu = ({
 					}}
 				>
 					{/* my image */}
-					<div style={{display:'flex',alignItems:'center',padding:'10px'}}>
+					<div
+						style={{ display: "flex", alignItems: "center", padding: "10px" }}
+					>
 						<img
 							src={picture}
 							alt="profile"
@@ -229,8 +223,8 @@ const StartMenu = ({
 							textAlign: "right",
 							// height:'100%',
 							// height:'25%',
-							display:'flex',
-							alignItems:'center',
+							display: "flex",
+							alignItems: "center",
 						}}
 					>
 						{/* arrow */}
