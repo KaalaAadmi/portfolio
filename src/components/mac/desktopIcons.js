@@ -71,7 +71,6 @@ const DesktopIcons = ({
 					textDecoration: "none",
 					color: "white",
 					padding: "20px",
-					marginTop: "20px",
 					cursor: "pointer",
 				}}
 				// onClick={() => props.setOpenModal("default")}

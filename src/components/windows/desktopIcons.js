@@ -56,16 +56,12 @@ const DesktopIcons = ({
 						</div>
 					)}
 				</div>
-				<div className="desktopIcon__title">{title}</div>
+				<div>{title}</div>
 			</a>
 		);
 	} else {
 		return (
 			<div
-				href={link}
-				{...(download && download)}
-				target="_blank"
-				rel="noreferrer"
 				style={{
 					display: "flex",
 					flexDirection: "column",
@@ -73,54 +69,41 @@ const DesktopIcons = ({
 					justifyContent: "center",
 					textDecoration: "none",
 					color: "white",
-					padding: isStartMenu ? "10px" : "20px",
+					padding: "20px",
+					// marginTop: "20px",
+					cursor: "pointer",
 				}}
+				onClick={() => onclick(true)}
 			>
 				<div
-					style={{
-						display: "flex",
-						flexDirection: "column",
-						alignItems: "center",
-						justifyContent: "center",
-						textDecoration: "none",
-						color: "white",
-						padding: "20px",
-						marginTop: "20px",
-						cursor: "pointer",
-					}}
-					// onClick={() => props.setOpenModal("default")}
-					onClick={() => onclick(true)}
+					className={`${classname} desktop_icon`}
+					style={{ position: "relative" }}
 				>
-					<div
-						className={`${classname} desktop_icon`}
-						style={{ position: "relative" }}
-					>
-						<img
-							src={source}
-							alt={classname}
-							style={{
-								height: "60px",
-								width: "60px",
-								position: "relative",
-								top: 0,
-								left: 0,
-							}}
-						/>
-						{shortcutPresent && (
-							<div
-								classname="shortcut"
-								style={{ position: "absolute", bottom: "0px", left: "0px" }}
-							>
-								<img
-									src={shortcut}
-									alt="shortcut"
-									style={{ height: "15px", width: "15px" }}
-								/>
-							</div>
-						)}
-					</div>
-					<div className="desktopIcon__title">{title}</div>
+					<img
+						src={source}
+						alt={classname}
+						style={{
+							height: "60px",
+							width: "60px",
+							position: "relative",
+							top: 0,
+							left: 0,
+						}}
+					/>
+					{shortcutPresent && (
+						<div
+							classname="shortcut"
+							style={{ position: "absolute", bottom: "0px", left: "0px" }}
+						>
+							<img
+								src={shortcut}
+								alt="shortcut"
+								style={{ height: "15px", width: "15px" }}
+							/>
+						</div>
+					)}
 				</div>
+				<div className="desktopIcon__title">{title}</div>
 			</div>
 		);
 	}

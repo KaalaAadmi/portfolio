@@ -17,12 +17,14 @@ import pdf from "../assets/pdf.png";
 import resume from "../assets/Arnav+Bhattacharya+Resume.pdf";
 import DesktopIcons from "../components/windows/desktopIcons";
 import macosMode from "../assets/macos_mode.png";
+import fullScreen from "../assets/fullscreen.png";
+import normalScreen from "../assets/normal screen.png";
 // import MenubarIcons from "../components/windows/menubarIcons";
 import Modal from "../components/windows/Modal";
 import StartMenu from "../components/windows/StartMenu";
 import { format } from "date-fns";
 
-export default function Windows({ toggleMode }) {
+export default function Windows({ toggleMode, fullscreen }) {
 	const [loading, setLoading] = React.useState(true);
 	const [ip, setIp] = useState("");
 	const [iconname, setIconname] = useState("");
@@ -74,6 +76,13 @@ export default function Windows({ toggleMode }) {
 			onclick: toggleMode,
 		},
 	];
+	const col2=[{
+		cn: "fullscreen",
+		src: fullScreen,
+		shortcut: false,
+		title: "Fullscreen",
+		onclick: fullscreen,
+	}]
 	const closeProjects = () => setShowProjects(false);
 	const openProjects = () => setShowProjects(true);
 	const closeStart = () => setShowStart(false);
@@ -120,6 +129,7 @@ export default function Windows({ toggleMode }) {
 								display: "flex",
 								flexDirection: "column",
 								justifyContent: "center",
+								// gridTemplateColumns: "repeat(2, 1fr)",
 								alignItems: "flex-start",
 							}}
 						>
@@ -137,6 +147,21 @@ export default function Windows({ toggleMode }) {
 									/>
 								);
 							})}
+							{/* {col2.map((icon, index) => {
+								return (
+									<DesktopIcons
+										key={index}
+										classname={icon.cn}
+										source={icon.src}
+										shortcutPresent={icon.shortcut}
+										title={icon.title}
+										onclick={icon.onclick}
+										link={icon.link}
+										download={icon.download}
+									/>
+								);
+							})} */}
+							
 						</div>
 						<div className="menubar" style={styles.menubar}>
 							{/* Left */}
