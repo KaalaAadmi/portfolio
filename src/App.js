@@ -1,17 +1,16 @@
 import "./App.css";
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react";
 import Windows from "./screens/windows";
 import Apple from "./screens/apple";
-import { setOS } from "./redux/actions";
-
+import { LoopCircleLoading } from "react-loadingg";
+import { isMacOs } from "react-device-detect";
+import { is } from "date-fns/locale";
 const App = () => {
-	const os = useSelector((state) => state.os);
-	const dispatch = useDispatch();
+	const [mode, setMode] = useState("windows"); // Initial mode is windows
 
-	const handleModeChange = (newMode) => {
-		dispatch(setOS(newMode));
-	};
+  const toggleMode = () => {
+    setMode(mode === "windows" ? "apple" : "windows");
+  };
 
 	function getOS() {
 		let userAgent = window.navigator.userAgent.toLowerCase(),
@@ -30,20 +29,26 @@ const App = () => {
 		} else if (!val && /linux/.test(userAgent)) {
 			val = "linux";
 		}
-		dispatch(setOS(val));
+		setMode(val);
+		// dispatch(setOS(val));
 	}
 	useEffect(() => {
-		getOS();
+		console.log(isMacOs);
+		if(isMacOs) {
+			setMode("apple");
+		} else {	
+			setMode("windows");
+		}
 	}, []);
-	console.log(os);
+	console.log(mode);
 	return (
 		<>
-			{os === "windows" || os === "android" ? (
-				<Windows changeOS={handleModeChange} />
-			) : (
-				<Apple changeOS={handleModeChange} />
-			)}
-		</>
+      {mode === "windows" ? (
+        <Windows toggleMode={toggleMode} />
+      ) : (
+        <Apple toggleMode={toggleMode} />
+      )}
+    </>
 	);
 };
 

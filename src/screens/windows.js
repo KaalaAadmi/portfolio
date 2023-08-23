@@ -20,10 +20,8 @@ import DesktopIcons from "../components/windows/desktopIcons";
 import Modal from "../components/windows/Modal";
 import StartMenu from "../components/windows/StartMenu";
 import { format } from "date-fns";
-import { setOS } from "../redux/actions";
-import { useDispatch, useSelector } from "react-redux";
 
-export default function Windows({ changeOS }) {
+export default function Windows({ toggleMode }) {
 	const [loading, setLoading] = React.useState(true);
 	const [ip, setIp] = useState("");
 	const [iconname, setIconname] = useState("");
@@ -31,13 +29,12 @@ export default function Windows({ changeOS }) {
 	const [temp, setTemp] = useState("");
 	const [showProjects, setShowProjects] = useState(false);
 	const [showStart, setShowStart] = useState(false);
-	const os = useSelector((state) => state.os);
-	const dispatch = useDispatch();
-	const toggleMode = () => {
-		const newMode = os === "macos" ? "windows" : "macos";
-		dispatch(setOS(newMode));
-		// window.location.reload(); // Reload the page
-	};
+
+	// const toggleMode = () => {
+	// 	const newMode = os === "macos" ? "windows" : "macos";
+	// 	dispatch(setOS(newMode));
+	// 	// window.location.reload(); // Reload the page
+	// };
 	const desktopIcons = [
 		{
 			cn: "projects",
@@ -73,7 +70,8 @@ export default function Windows({ changeOS }) {
 			src: edge,
 			shortcut: false,
 			title: "Change OS",
-			onclick: () => changeOS(os === "macos" ? "windows" : "macos"),
+			// onclick: () => changeOS(os === "macos" ? "windows" : "macos"),
+			onclick: toggleMode,
 		},
 	];
 	const closeProjects = () => setShowProjects(false);

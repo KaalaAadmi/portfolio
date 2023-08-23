@@ -16,13 +16,9 @@ import { Tooltip } from "react-tooltip";
 import { motion } from "framer-motion";
 import About from "../components/mac/About";
 import Contact from "../components/mac/Contact";
-import Project from "../components/mac/Projects";
-import { useDispatch, useSelector } from "react-redux";
-import { setOS } from "../redux/actions";
+import Project from "../components/mac/Projects";// import { setOS } from "../redux/actions";
 
-const Apple = ({ changeOS }) => {
-	const os = useSelector((state) => state.os);
-	const dispatch = useDispatch();
+const Apple = ({ toggleMode }) => {
 	const [loading, setLoading] = React.useState(true);
 	const [showAbout, setShowAbout] = useState(false);
 	const [showContact, setShowContact] = useState(false);
@@ -71,11 +67,7 @@ const Apple = ({ changeOS }) => {
 		setSelectedMenuItem(null);
 		setShowProjects(false);
 	};
-	const toggleMode = () => {
-		const newMode = os === "macos" ? "windows" : "macos";
-		dispatch(setOS(newMode));
-		// window.location.reload(); // Reload the page
-	};
+	
 	const desktopIcons = [
 		{
 			cn: "projects",
