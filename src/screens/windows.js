@@ -22,6 +22,7 @@ import normalScreen from "../assets/normal screen.png";
 // import MenubarIcons from "../components/windows/menubarIcons";
 import Modal from "../components/windows/Modal";
 import StartMenu from "../components/windows/StartMenu";
+import NormalModal from "../components/NormalModal";
 import { format } from "date-fns";
 
 export default function Windows({ toggleMode, fullscreen }) {
@@ -32,12 +33,7 @@ export default function Windows({ toggleMode, fullscreen }) {
 	const [temp, setTemp] = useState("");
 	const [showProjects, setShowProjects] = useState(false);
 	const [showStart, setShowStart] = useState(false);
-
-	// const toggleMode = () => {
-	// 	const newMode = os === "macos" ? "windows" : "macos";
-	// 	dispatch(setOS(newMode));
-	// 	// window.location.reload(); // Reload the page
-	// };
+	const [topModal,setTopModal]=useState(false);
 	const desktopIcons = [
 		{
 			cn: "projects",
@@ -116,7 +112,12 @@ export default function Windows({ toggleMode, fullscreen }) {
 	React.useEffect(() => {
 		setTimeout(() => setLoading(false), 1000);
 	});
-
+	useEffect(()=>{
+		setTimeout(()=>setTopModal(!topModal),3000)
+	},[])
+	const toggleTopModal=()=>{
+		setTopModal(!topModal)
+	}
 	return (
 		<>
 			{loading === false ? (
@@ -330,6 +331,7 @@ export default function Windows({ toggleMode, fullscreen }) {
 							border: "1px solid #333",
 						}}
 					/>
+					{topModal&&<NormalModal change={toggleTopModal}/>}
 				</div>
 			) : (
 				<LoopCircleLoading />

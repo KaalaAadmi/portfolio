@@ -11,8 +11,8 @@ const ProjectContainer = ({ name, icon, main, category, useBy}) => {
 						style={{ height: "60px", width: "60px" }}
 					/>
 				</div>
-				<div style={{ paddingLeft: "1rem", textAlign: "left" }}>
-					<div style={{ fontWeight: "bold", color: "white" }}>{name}</div>
+				<div style={{ paddingLeft: "1rem", textAlign: "left",color: "white" }}>
+					<div style={{ fontWeight: "bold" }}>{name}</div>
 					<div>{category}</div>
 					<div>Designed for {useBy}</div>
 				</div>

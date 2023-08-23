@@ -1,20 +1,45 @@
 import React from "react";
 
-const ProjectContainer = ({ name, icon, main, category, useBy}) => {
+const ProjectContainer = ({ name, icon, main, category, useBy }) => {
 	return (
-		<div style={{display:'flex',flexDirection:'column',width:'100%'}}>
-			<div style={{ display: "flex", flexDirection: "row",paddingBottom:'2rem' }}>
-				<div style={{ borderRadius: "12px" }}>
-					<img
-						src={icon}
-						alt={name}
-						style={{ height: "60px", width: "60px" }}
-					/>
+		<div style={{ display: "flex", flexDirection: "column", width: "100%", cursor:'pointer' }}>
+			<div
+				style={{
+					display: "flex",
+					flexDirection: "row",
+					paddingBottom: "2rem",
+					alignItems: "center",
+					justifyContent: "space-between",
+				}}
+			>
+				<div style={{display:'flex'}}>
+					<div style={{ borderRadius: "12px" }}>
+						<img
+							src={icon}
+							alt={name}
+							style={{ height: "60px", width: "60px" }}
+						/>
+					</div>
+					<div
+						style={{ paddingLeft: "1rem", textAlign: "left", color: "white" }}
+					>
+						<div style={{ fontWeight: "bold" }}>{name}</div>
+						<div>{category}</div>
+						<div>Designed for {useBy}</div>
+					</div>
 				</div>
-				<div style={{ paddingLeft: "1rem", textAlign: "left" }}>
-					<div style={{ fontWeight: "bold", color: "white" }}>{name}</div>
-					<div>{category}</div>
-					<div>Designed for {useBy}</div>
+				<div
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+						backgroundColor: "white",
+						borderRadius: "50px",
+						height: "fit-content",
+						marginRight: "1rem",
+					}}
+				>
+					<div style={{ padding: ".15rem .5rem",fontWeight:'bold',color:'#007aff' }}>SEE</div>
 				</div>
 			</div>
 			<div>

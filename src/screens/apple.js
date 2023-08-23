@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { LoopCircleLoading } from "react-loadingg";
 import { format } from "date-fns";
 import styles from "./apple.css";
@@ -18,12 +18,20 @@ import { motion } from "framer-motion";
 import About from "../components/mac/About";
 import Contact from "../components/mac/Contact";
 import Project from "../components/mac/Projects";// import { setOS } from "../redux/actions";
+import NormalModal from "../components/NormalModal";
 
 const Apple = ({ toggleMode }) => {
 	const [loading, setLoading] = React.useState(true);
 	const [showAbout, setShowAbout] = useState(false);
 	const [showContact, setShowContact] = useState(false);
 	const [showProjects, setShowProjects] = useState(false);
+	const [topModal,setTopModal]=useState(false);
+	useEffect(()=>{
+		setTimeout(()=>setTopModal(!topModal),3000)
+	},[])
+	const toggleTopModal=()=>{
+		setTopModal(!topModal)
+	}
 	React.useEffect(() => {
 		setTimeout(() => setLoading(false), 1000);
 	});
@@ -352,6 +360,7 @@ const Apple = ({ toggleMode }) => {
 						<Contact handleClose={closeContact} about={openAbout} />
 					)}
 					{showProjects && <Project handleClose={closeProject} />}
+					{topModal&&<NormalModal change={toggleTopModal}/>}
 				</div>
 			) : (
 				<LoopCircleLoading />
