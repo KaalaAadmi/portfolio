@@ -113,7 +113,7 @@ export default function Windows({ toggleMode, fullscreen }) {
 		setTimeout(() => setLoading(false), 1000);
 	});
 	useEffect(()=>{
-		setTimeout(()=>setTopModal(!topModal),3000)
+		setTimeout(()=>setTopModal(!topModal),2000)
 	},[])
 	const toggleTopModal=()=>{
 		setTopModal(!topModal)

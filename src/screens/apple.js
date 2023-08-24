@@ -27,7 +27,7 @@ const Apple = ({ toggleMode }) => {
 	const [showProjects, setShowProjects] = useState(false);
 	const [topModal,setTopModal]=useState(false);
 	useEffect(()=>{
-		setTimeout(()=>setTopModal(!topModal),3000)
+		setTimeout(()=>setTopModal(!topModal),2000)
 	},[])
 	const toggleTopModal=()=>{
 		setTopModal(!topModal)
