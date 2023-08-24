@@ -6,7 +6,7 @@ import { BsGlobe2 } from "react-icons/bs";
 import Divider from "./Divider";
 import { Tooltip } from "react-tooltip";
 
-const Contact = ({ handleClose,about }) => {
+const Contact = ({ handleClose, about }) => {
 	const dropIn = {
 		hidden: {
 			y: "-100vh",
@@ -27,7 +27,7 @@ const Contact = ({ handleClose,about }) => {
 			opacity: 0,
 		},
 	};
-  return (
+	return (
 		<Backdrop onClick={handleClose}>
 			<motion.div
 				onClick={(e) => e.stopPropagation()}
@@ -139,66 +139,84 @@ const Contact = ({ handleClose,about }) => {
 								width: "100%",
 							}}
 						>
-							<div
+							<a
+								href="tel:+3538312130609"
+								target="_blank"
+								rel="noreferrer"
 								style={{
 									display: "flex",
 									flexDirection: "column",
 									alignItems: "center",
+									textDecoration: "none",
 								}}
 								data-tooltip-id="tooltip"
 								data-tooltip-content="Call me"
-                data-tooltip-place="bottom"
+								data-tooltip-place="bottom"
 							>
 								<MdOutlineCall
 									style={{
 										backgroundColor: "#007aff",
 										padding: ".5rem",
 										borderRadius: "50%",
+										textDecoration:'none'
 									}}
 									size={20}
+									color={"#ffffff"}
 								/>
 								<div style={{ color: "#007aff", fontSize: ".8rem" }}>call</div>
-							</div>
-							<div
+							</a>
+							<a
+								href="mailto:bhattaar@tcd.ie"
+								target="_blank"
+								rel="noreferrer"
 								style={{
 									display: "flex",
 									flexDirection: "column",
 									alignItems: "center",
+									textDecoration: "none",
 								}}
 								data-tooltip-id="tooltip"
 								data-tooltip-content="Send me an email"
-                data-tooltip-place="bottom"
+								data-tooltip-place="bottom"
 							>
 								<MdEmail
 									style={{
 										backgroundColor: "#007aff",
 										padding: ".5rem",
 										borderRadius: "50%",
+										textDecoration:'none'
 									}}
 									size={20}
+									color={"#ffffff"}
 								/>
 								<div style={{ color: "#007aff", fontSize: ".8rem" }}>mail</div>
-							</div>
-							<div
+							</a>
+							<a
+								href="https://arnav-bhattacharya-resume.vercel.app/"
+								target="_blank"
+								rel="noreferrer"
 								style={{
 									display: "flex",
 									flexDirection: "column",
 									alignItems: "center",
+									textDecoration: "none",
 								}}
 								data-tooltip-id="tooltip"
 								data-tooltip-content="Visit my website"
-                data-tooltip-place="bottom"
+								data-tooltip-place="bottom"
 							>
 								<BsGlobe2
 									style={{
 										backgroundColor: "#007aff",
 										padding: ".5rem",
 										borderRadius: "50%",
+										textDecoration:'none'
 									}}
 									size={20}
+									color={"#ffffff"}
 								/>
 								<div style={{ color: "#007aff", fontSize: ".8rem" }}>web</div>
-							</div>
+							</a>
 						</div>
 					</div>
 					<div
@@ -270,7 +288,7 @@ const Contact = ({ handleClose,about }) => {
 								padding: ".15rem .3rem",
 								cursor: "pointer",
 							}}
-              onClick={about}
+							onClick={about}
 						>
 							About Me
 						</div>

@@ -154,7 +154,7 @@ const StartMenu = ({
 						<div style={{ width: "60%" }}>
 							{/* <div style={{ display: "flex", justifyContent: "space-evenly" }} > */}
 							<div>+353 83 123 0609</div>
-							
+
 							{/* </div> */}
 							<StartDivider />
 							<div>bhattaar@tcd.ie</div>
@@ -236,9 +236,39 @@ const StartMenu = ({
 									alignItems: "center",
 								}}
 							>
-								<MdOutlineCall size={18} style={{ color: "white" }} />
-								<MdOutlineEmail size={18} style={{ color: "white" }} />
-								<FaRegCompass size={18} style={{ color: "white" }} />
+								<a
+									href="tel:+3538312130609"
+									target="_blank"
+									rel="noreferrer"
+									style={{ textDecoration: "none" }}
+									data-tooltip-id="tooltip"
+									data-tooltip-content="Call me"
+									data-tooltip-place="bottom"
+								>
+									<MdOutlineCall size={18} style={{ color: "white" }} />
+								</a>
+								<a
+									href="mailto:bhattaar@tcd.ie"
+									target="_blank"
+									rel="noreferrer"
+									style={{ textDecoration: "none" }}
+									data-tooltip-id="tooltip"
+									data-tooltip-content="Send me an email"
+									data-tooltip-place="bottom"
+								>
+									<MdOutlineEmail size={18} style={{ color: "white" }} />
+								</a>
+								<a
+									href="https://arnav-bhattacharya-resume.vercel.app/"
+									target="_blank"
+									rel="noreferrer"
+									style={{ textDecoration: "none" }}
+									data-tooltip-id="tooltip"
+									data-tooltip-content="Visit my website"
+									data-tooltip-place="bottom"
+								>
+									<FaRegCompass size={18} style={{ color: "white" }} />
+								</a>
 							</div>
 						) : (
 							<div
