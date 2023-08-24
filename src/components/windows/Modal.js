@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 import Backdrop from "./Backdrop";
 
-import React from "react";
+import React, { useRef, useState } from "react";
 import ProjectContainer from "./ProjectContainer";
 
 import { AiOutlineClose } from "react-icons/ai";
@@ -206,14 +206,23 @@ const Modal = ({ handleClose, text, classname }) => {
 		},
 	};
 	const [selected, setSelected] = React.useState(null);
-	const handleSelected = (index) => {
+	const [scrollPosition, setScrollPosition] = useState(0);
+	const modalContentRef = useRef(null);
+
+	const handleProjectClick = (index) => {
+		setScrollPosition(window.scrollY); // Capture current scroll position
 		setSelected(index);
-		console.log("first");
+		window.scrollTo(0, 0); // Set scroll position to the top
+		// Reset modal content scroll position
+		if (modalContentRef.current) {
+			modalContentRef.current.scrollTop = 0;
+		}
 	};
 	console.log(selected);
 	return (
 		<Backdrop onClick={handleClose}>
 			<motion.div
+				ref={modalContentRef}
 				onClick={(e) => e.stopPropagation()}
 				className={`modal ${classname}`}
 				variants={dropIn}
@@ -285,7 +294,7 @@ const Modal = ({ handleClose, text, classname }) => {
 								return (
 									<div
 										style={{ width: "100%" }}
-										onClick={() => handleSelected(index)}
+										onClick={() => handleProjectClick(index)}
 									>
 										<ProjectContainer
 											key={index}

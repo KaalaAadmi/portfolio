@@ -23,6 +23,7 @@ import smartPillowScreen from "../../assets/smartPillowScreen.png";
 import eCommerceScreen from "../../assets/eCommerceScreen.png";
 import videoScreen from "../../assets/videoScreen.gif";
 import cookbookScreen from "../../assets/cookbookScreen.gif";
+import { useState,useRef } from "react";
 
 const projectList = [
 	{
@@ -201,10 +202,19 @@ const Project = ({ handleClose }) => {
 		},
 	};
 	const [selected, setSelected] = React.useState(null);
-	const handleSelected = (index) => {
+	const [scrollPosition, setScrollPosition] = useState(0);
+	const modalContentRef = useRef(null);
+
+	const handleProjectClick = (index) => {
+		setScrollPosition(window.scrollY); // Capture current scroll position
 		setSelected(index);
-		console.log("first");
+		window.scrollTo(0, 0); // Set scroll position to the top
+		// Reset modal content scroll position
+		if (modalContentRef.current) {
+			modalContentRef.current.scrollTop = 0;
+		}
 	};
+	
 	console.log(selected);
 	return (
 		<Backdrop onClick={handleClose}>
@@ -291,7 +301,7 @@ const Project = ({ handleClose }) => {
 								return (
 									<div
 										style={{ width: "100%" }}
-										onClick={() => handleSelected(index)}
+										onClick={() => handleProjectClick(index)}
 									>
 										<ProjectContainer
 											key={index}

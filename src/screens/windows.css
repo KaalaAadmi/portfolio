@@ -161,7 +161,7 @@
 	align-items: center;
 	width: 30px;
 	position: absolute;
-
+	visibility: visible;
 	-webkit-backdrop-filter: blur(4px);
 	backdrop-filter: blur(4px);
 	border-top-right-radius: 12px;
