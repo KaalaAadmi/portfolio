@@ -1,8 +1,13 @@
 import React from "react";
 import StartDivider from "./Divider";
 import { PiUserSquareFill } from "react-icons/pi";
-import { MdOutlineSportsBaseball } from "react-icons/md";
+import { MdVideogameAsset, MdWarning } from "react-icons/md";
 import { GoBrowser } from "react-icons/go";
+import { AiFillAndroid, AiFillApple } from "react-icons/ai";
+import { IoFastFoodOutline } from "react-icons/io5";
+import { BsFillClipboardDataFill, BsGlobe } from "react-icons/bs";
+import { BiMicrochip } from "react-icons/bi";
+import { FiShoppingCart } from "react-icons/fi";
 
 const ProjectDetails = ({ data }) => {
 	console.log(data);
@@ -110,7 +115,21 @@ const ProjectDetails = ({ data }) => {
 						category
 					</div>
 					<div>
-						<MdOutlineSportsBaseball size={40} />
+					{data.category === "Data Analysis" ? (
+							<BsFillClipboardDataFill size={40} />
+						) : data.category === "Emergency Response" ? (
+							<MdWarning size={40} />
+						) : data.category === "IoT" ? (
+							<BiMicrochip size={40} />
+						) : data.category === "Social" ? (
+							<BsGlobe size={40} />
+						) : data.category === "E-Commerce" ? (
+							<FiShoppingCart size={40} />
+						) : data.category === "Entertainment" ? (
+							<MdVideogameAsset size={40} />
+						) : data.category === "Food" ? (
+							<IoFastFoodOutline size={40} />
+						) : null}
 					</div>
 					<div style={{ fontSize: "0.8rem" }}>{data.category}</div>
 				</div>
@@ -126,7 +145,14 @@ const ProjectDetails = ({ data }) => {
 						platforms
 					</div>
 					<div>
-						<GoBrowser size={40} />
+					{data.useBy === "Web" ? (
+							<GoBrowser size={40} />
+						) : (
+							<>
+								<AiFillAndroid size={40} />
+								<AiFillApple size={40} />
+							</>
+						)}
 					</div>
 					<div style={{ fontSize: "0.8rem" }}>Browser</div>
 				</div>

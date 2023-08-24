@@ -1,10 +1,16 @@
 import React from "react";
 import StartDivider from "./Divider";
 import { PiUserSquareFill } from "react-icons/pi";
-import { MdOutlineSportsBaseball } from "react-icons/md";
+import { MdWarning } from "react-icons/md";
 import { GoBrowser } from "react-icons/go";
+import { BsFillClipboardDataFill, BsGlobe } from "react-icons/bs";
+import { BiMicrochip } from "react-icons/bi";
+import { FiShoppingCart } from "react-icons/fi";
+import { MdVideogameAsset } from "react-icons/md";
+import { IoFastFoodOutline } from "react-icons/io5";
+import { AiFillAndroid, AiFillApple } from "react-icons/ai";
 
-const ProjectDetails = ({ data,handleClose }) => {
+const ProjectDetails = ({ data, handleClose }) => {
 	console.log(data);
 	return (
 		<div style={{ padding: "3rem 2rem 2rem 2rem", color: "#acacac" }}>
@@ -110,7 +116,21 @@ const ProjectDetails = ({ data,handleClose }) => {
 						category
 					</div>
 					<div>
-						<MdOutlineSportsBaseball size={40} />
+						{data.category === "Data Analysis" ? (
+							<BsFillClipboardDataFill size={40} />
+						) : data.category === "Emergency Response" ? (
+							<MdWarning size={40} />
+						) : data.category === "IoT" ? (
+							<BiMicrochip size={40} />
+						) : data.category === "Social" ? (
+							<BsGlobe size={40} />
+						) : data.category === "E-Commerce" ? (
+							<FiShoppingCart size={40} />
+						) : data.category === "Entertainment" ? (
+							<MdVideogameAsset size={40} />
+						) : data.category === "Food" ? (
+							<IoFastFoodOutline size={40} />
+						) : null}
 					</div>
 					<div style={{ fontSize: "0.8rem" }}>{data.category}</div>
 				</div>
@@ -126,7 +146,14 @@ const ProjectDetails = ({ data,handleClose }) => {
 						platforms
 					</div>
 					<div>
-						<GoBrowser size={40} />
+						{data.useBy === "Web" ? (
+							<GoBrowser size={40} />
+						) : (
+							<>
+								<AiFillAndroid size={20} />
+								<AiFillApple size={20} />
+							</>
+						)}
 					</div>
 					<div style={{ fontSize: "0.8rem" }}>Browser</div>
 				</div>
@@ -188,49 +215,37 @@ const ProjectDetails = ({ data,handleClose }) => {
 			>
 				<div>
 					<div style={{ fontSize: ".8rem", fontWeight: "500" }}>Role</div>
-					<div
-						style={{ fontSize: "0.9rem", fontWeight: "600" }}
-					>
+					<div style={{ fontSize: "0.9rem", fontWeight: "600" }}>
 						{data.role}
 					</div>
 				</div>
 				<div>
 					<div style={{ fontSize: ".8rem", fontWeight: "500" }}>Client</div>
-					<div
-						style={{ fontSize: "0.9rem", fontWeight: "600" }}
-					>
+					<div style={{ fontSize: "0.9rem", fontWeight: "600" }}>
 						{data.client}
 					</div>
 				</div>
 				<div>
 					<div style={{ fontSize: ".8rem", fontWeight: "500" }}>Team Size</div>
-					<div
-						style={{ fontSize: "0.9rem", fontWeight: "600" }}
-					>
+					<div style={{ fontSize: "0.9rem", fontWeight: "600" }}>
 						{data.teamSize}
 					</div>
 				</div>
 				<div>
 					<div style={{ fontSize: ".8rem", fontWeight: "500" }}>Duration</div>
-					<div
-						style={{ fontSize: "0.9rem", fontWeight: "600" }}
-					>
+					<div style={{ fontSize: "0.9rem", fontWeight: "600" }}>
 						{data.duration}
 					</div>
 				</div>
 				<div>
 					<div style={{ fontSize: ".8rem", fontWeight: "500" }}>Language</div>
-					<div
-						style={{ fontSize: "0.9rem", fontWeight: "600" }}
-					>
+					<div style={{ fontSize: "0.9rem", fontWeight: "600" }}>
 						{data.lang}
 					</div>
 				</div>
 				<div>
 					<div style={{ fontSize: ".8rem", fontWeight: "500" }}>Countries</div>
-					<div
-						style={{ fontSize: "0.9rem", fontWeight: "600" }}
-					>
+					<div style={{ fontSize: "0.9rem", fontWeight: "600" }}>
 						{data.countries}
 					</div>
 				</div>
