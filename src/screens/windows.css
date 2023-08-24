@@ -110,28 +110,27 @@
 	/* overflow-x: hidden;
 	overflow-y: auto; */
 	text-align: center;
-	overflow:auto;
-	overflow-x:hidden;
-	scrollbar-width: none;  /* Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
+	overflow: auto;
+	overflow-x: hidden;
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE and Edge */
 }
 
 .projects_menu::-webkit-scrollbar {
 	/* width: 12px; */
-	display:none;
+	display: none;
 }
 
 .projects_menu::-webkit-scrollbar-track {
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 	border-radius: 10px;
 }
 
 .projects_menu::-webkit-scrollbar-thumb {
 	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
-​
-.start_menu {
+​ .start_menu {
 	/* width: clamp(25%, 400px, 65%);
 	height: min(25%, 50%); */
 	background-color: rgba(0, 0, 0, 0.25);
@@ -142,8 +141,12 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding-left:10px;
-	padding-right:10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.start_menu_links:hover {
+	color: #007aff;
 }
 
 .taskBar {
@@ -158,7 +161,7 @@
 	align-items: center;
 	width: 30px;
 	position: absolute;
-	
+
 	-webkit-backdrop-filter: blur(4px);
 	backdrop-filter: blur(4px);
 	border-top-right-radius: 12px;
@@ -169,7 +172,7 @@
 	background-color: rgb(209, 71, 71);
 }
 
-.desktopIcon__title{
+.desktopIcon__title {
 	white-space: pre-wrap;
 	text-align: center;
 }

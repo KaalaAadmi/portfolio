@@ -153,13 +153,34 @@ const StartMenu = ({
 						</div>
 						<div style={{ width: "60%" }}>
 							{/* <div style={{ display: "flex", justifyContent: "space-evenly" }} > */}
-							<div>+353 83 123 0609</div>
+							<div>
+								<a className="start_menu_links"
+									href="tel:+353831230609"
+									style={{ textDecoration: "none", color: "white" }}
+								>
+									+353 83 123 0609
+								</a>
+							</div>
 
 							{/* </div> */}
 							<StartDivider />
-							<div>bhattaar@tcd.ie</div>
+							<div>
+								<a className="start_menu_links"
+									href="mailto:bhattaar@tcd.ie"
+									style={{ textDecoration: "none", color: "white" }}
+								>
+									bhattaar@tcd.ie
+								</a>
+							</div>
 							<StartDivider />
-							<div>https://ab.com/</div>
+							<div>
+								<a className="start_menu_links"
+									href="https://arnav-bhattacharya-resume.vercel.app/"
+									style={{ textDecoration: "none", color: "white" }}
+								>
+									https://ab.com/
+								</a>
+							</div>
 							<StartDivider />
 							<div>2+ years</div>
 							<StartDivider />
