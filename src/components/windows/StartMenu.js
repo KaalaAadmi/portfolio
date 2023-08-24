@@ -154,10 +154,7 @@ const StartMenu = ({
 						<div style={{ width: "60%" }}>
 							{/* <div style={{ display: "flex", justifyContent: "space-evenly" }} > */}
 							<div>+353 83 123 0609</div>
-							<MdOutlineCall
-								size={18}
-								style={{ color: "blue", cursor: "pointer" }}
-							/>
+							
 							{/* </div> */}
 							<StartDivider />
 							<div>bhattaar@tcd.ie</div>

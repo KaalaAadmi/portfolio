@@ -5,7 +5,7 @@ const Divider = () => {
 		<div
 			style={{
 				width: "100%",
-				border: "0.05px solid #787b80",
+				border: "0.05px solid #ffffff0c",
 				// marginRight: "10px",
 				marginTop: "5px",
 				marginBottom: "5px",
