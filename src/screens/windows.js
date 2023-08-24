@@ -24,6 +24,7 @@ import Modal from "../components/windows/Modal";
 import StartMenu from "../components/windows/StartMenu";
 import NormalModal from "../components/NormalModal";
 import { format } from "date-fns";
+import SplashScreen from "../components/windows/SplashScreen";
 
 export default function Windows({ toggleMode, fullscreen }) {
 	const [loading, setLoading] = React.useState(true);
@@ -33,7 +34,7 @@ export default function Windows({ toggleMode, fullscreen }) {
 	const [temp, setTemp] = useState("");
 	const [showProjects, setShowProjects] = useState(false);
 	const [showStart, setShowStart] = useState(false);
-	const [topModal,setTopModal]=useState(false);
+	const [topModal, setTopModal] = useState(false);
 	const desktopIcons = [
 		{
 			cn: "projects",
@@ -72,13 +73,15 @@ export default function Windows({ toggleMode, fullscreen }) {
 			onclick: toggleMode,
 		},
 	];
-	const col2=[{
-		cn: "fullscreen",
-		src: fullScreen,
-		shortcut: false,
-		title: "Fullscreen",
-		onclick: fullscreen,
-	}]
+	const col2 = [
+		{
+			cn: "fullscreen",
+			src: fullScreen,
+			shortcut: false,
+			title: "Fullscreen",
+			onclick: fullscreen,
+		},
+	];
 	const closeProjects = () => setShowProjects(false);
 	const openProjects = () => setShowProjects(true);
 	const closeStart = () => setShowStart(false);
@@ -112,12 +115,12 @@ export default function Windows({ toggleMode, fullscreen }) {
 	React.useEffect(() => {
 		setTimeout(() => setLoading(false), 1000);
 	});
-	useEffect(()=>{
-		setTimeout(()=>setTopModal(!topModal),2000)
-	},[])
-	const toggleTopModal=()=>{
-		setTopModal(!topModal)
-	}
+	useEffect(() => {
+		setTimeout(() => setTopModal(!topModal), 2000);
+	}, []);
+	const toggleTopModal = () => {
+		setTopModal(!topModal);
+	};
 	return (
 		<>
 			{loading === false ? (
@@ -162,7 +165,6 @@ export default function Windows({ toggleMode, fullscreen }) {
 									/>
 								);
 							})} */}
-							
 						</div>
 						<div className="menubar" style={styles.menubar}>
 							{/* Left */}
@@ -331,10 +333,11 @@ export default function Windows({ toggleMode, fullscreen }) {
 							border: "1px solid #333",
 						}}
 					/>
-					{topModal&&<NormalModal change={toggleTopModal}/>}
+					{topModal && <NormalModal change={toggleTopModal} />}
 				</div>
 			) : (
-				<LoopCircleLoading />
+				// <LoopCircleLoading />
+				<SplashScreen />
 			)}
 		</>
 	);
