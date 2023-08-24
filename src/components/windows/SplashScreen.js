@@ -15,7 +15,7 @@ const SplashScreen = () => {
 			<img
 				src={require("../../assets/Windows.png")}
 				alt="windows"
-				style={{ height: "10%", width: "5%" }}
+				style={{ height: "15%", width: "5%" }}
 			/>
 		</div>
 	);
