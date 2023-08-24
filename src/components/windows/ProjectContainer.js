@@ -2,7 +2,7 @@ import React from "react";
 
 const ProjectContainer = ({ name, icon, main, category, useBy}) => {
 	return (
-		<div style={{display:'flex',flexDirection:'column',width:'100%'}}>
+		<div style={{display:'flex',flexDirection:'column',width:'100%',cursor:'pointer'}}>
 			<div style={{ display: "flex", flexDirection: "row",paddingBottom:'2rem' }}>
 				<div style={{ borderRadius: "12px" }}>
 					<img
